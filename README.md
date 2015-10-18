@@ -1,4 +1,4 @@
-# Setup my worstation with .*rc files
+# Setup my workstation with .*rc files
 
 Usage:
 
