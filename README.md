@@ -1,4 +1,3 @@
-# README.md
 # Setup my worstation with .*rc files
 
 Usage:
