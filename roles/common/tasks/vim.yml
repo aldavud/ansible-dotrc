@@ -1,0 +1,28 @@
+---
+- name: create bundle and autoload
+  file: path=~/.vim/{{ item }} recurse=yes state=directory
+  with_items:
+    - bundle
+    - autoload
+
+- name: install pathogen
+  git: dest=~/.vim/bundle/vim-pathogen repo=https://github.com/tpope/vim-pathogen.git
+
+- name: activate pathogen
+  file: path=~/.vim/autoload/pathogen.vim src=~/.vim/bundle/vim-pathogen/autoload/pathogen.vim state=link
+
+- name: install bats.vim
+  git: dest=~/.vim/bundle/bats.vim repo=https://github.com/rosstimson/bats.vim
+
+- name: install syntastic
+  git: dest=~/.vim/bundle/syntastic repo=https://github.com/scrooloose/syntastic
+
+- name: install tabular
+  git: dest=~/.vim/bundle/tabular repo=https://github.com/godlygeek/tabular
+
+- name: install vim-fugitive
+  git: dest=~/.vim/bundle/vim-fugitive repo=https://github.com/tpope/vim-fugitive
+
+- name: install vim-puppet
+  git: dest=~/.vim/bundle/vim-puppet repo=https://github.com/rodjek/vim-puppet
+

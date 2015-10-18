@@ -1,0 +1,15 @@
+---
+- name: get dotrc from github
+  git: dest=~/.dotrc repo=git@github.com:aldavud/dotrc
+
+- name: symlink dotrc files
+  file: path=~/.{{ item }} src=~/.dotrc/{{ item }} state=link
+  with_items:
+    - bashrc
+    - bash_aliases
+    - gitconfig
+    - git-prompt.sh
+    - irssi
+    - screenrc
+    - vimrc
+
